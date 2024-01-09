@@ -1,0 +1,233 @@
+@font-face {
+  font-family: "Ninja Naruto";
+  src: url("./Ninja\ Naruto\ V1.ttf") format("truetype");
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* background: rgb(26, 26, 26); */
+  overflow: hidden;
+  font-family: "Ninja Naruto";
+  user-select: none;
+}
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  /* opacity: 0; */
+  align-items: center;
+  animation: gone 2s 3s forwards;
+  pointer-events: none;
+}
+.loading span:first-child {
+  font-size: 3em;
+  color: white;
+  background-image: linear-gradient(0deg, orange, orangered);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  animation: appear 1s ease-in-out forwards;
+}
+.loading span:last-child {
+  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.795);
+  position: absolute;
+  transform: translate(200px, 40px);
+  opacity: 0;
+  animation: appear 1s 0.5s forwards ease-in-out alternate;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes gone {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.eye-container {
+  display: grid;
+  width: auto;
+  width: 500px;
+  transform: scale(0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 50px red;
+  padding: 0px;
+  margin: 0 auto;
+  place-items: center;
+}
+.selector {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 110px);
+}
+.selector .btn {
+  margin: 5px;
+  cursor: pointer;
+  /* border-radius:30px; */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: 90px;
+  height: 30px;
+  color: red;
+  border: 2px solid red;
+}
+.btn:hover {
+  color: black;
+  background: red;
+  border: black;
+}
+/* .eye[data-state="KAKASHI"] body{
+    background-image: url("");
+}  */
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  overflow: hidden;
+}
+.bg .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* background -------------------------------------------------------------------------------------------------------- */
+/* layer1---------------------------------------------------------------------- */
+body[data-state="BASE"] .bg > .layer1 {
+  background-image: url("../media/wallpaperflare.com_wallpaper.webp");
+  background-position: center;
+  filter: blur(0px) brightness(50%);
+  background-size: cover;
+}
+body[data-state="ITACHI"] .bg > .layer1 {
+  background-image: url("../media/8eca57a00f5974c875a0952dc52841c4.webp");
+  background-position: center;
+  filter: blur(2px) brightness(50%);
+  background-size: cover;
+}
+body[data-state="KAKASHI"] .bg > .layer1 {
+  background-image: url("../media/223285.webp");
+  background-position: center;
+  filter: blur(0px) brightness(50%);
+  background-size: cover;
+}
+body[data-state="MADARA"] .bg > .layer1 {
+  background-image: url("../media/Madara_Tengai_Shinsei.webp");
+  background-position: center -5vw;
+  filter: blur(0px) brightness(70%);
+  background-size: cover;
+}
+
+/* layer2---------------------------------------------------------------------- */
+body[data-state="BASE"] .bg > .layer2 {
+  background-image: url("../media/");
+  /* background-position:; */
+}
+body[data-state="ITACHI"] .bg > .layer2 {
+  background-image: url("../media/itachi.webp");
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-position: 90% 50%;
+}
+body[data-state="KAKASHI"] .bg > .layer2 {
+  background-image: url("../media/kakashi-chidori-1.webp");
+  background-repeat: no-repeat;
+  background-size: 500px;
+  filter: drop-shadow(0 0 50px rgb(67, 149, 255)) saturate(200%);
+  background-position: 94% 50%;
+}
+body[data-state="MADARA"] .bg > .layer2 {
+  background-image: url("../media/madara1-min.webp");
+  background-repeat: no-repeat;
+  background-position: 90% 70%;
+  background-size: 350px;
+  z-index: 1;
+}
+
+/* layer3---------------------------------------------------------------------- */
+body[data-state="BASE"] .bg > .layer3 {
+}
+body[data-state="ITACHI"] .bg > .layer3 {
+  background-image: url("../media/itachi-crows-2.webp");
+  background-repeat: no-repeat;
+  filter: blur(1px);
+  background-position: 40% 20%;
+  background-size: 50vw;
+}
+body[data-state="KAKASHI"] .bg > .layer3 {
+  background-image: url("../media/kakashi.webp");
+  background-repeat: no-repeat;
+  background-position: 85% 50%;
+  background-size: 250px;
+}
+body[data-state="MADARA"] .bg > .layer3 {
+  background-image: url("../media/madara-susano.webp");
+  background-repeat: no-repeat;
+  background-position: 150% 100%;
+  opacity: 0.3;
+  background-size: 800px;
+}
+
+/* layer4--------------------------------------------------------------------- */
+body[data-state="BASE"] .bg > .layer4 {
+}
+body[data-state="ITACHI"] .bg > .layer4 {
+  background-image: url("../media/itachi-crows-1.webp");
+  background-repeat: no-repeat;
+  background-position: 0% 0%;
+  background-size: 30vw;
+  filter: blur(4px);
+}
+body[data-state="KAKASHI"] .bg > .layer4 {
+  background-image: url("../media/shurikens.webp");
+  background-repeat: no-repeat;
+  background-size: 40vw;
+  filter: blur(1px);
+  background-position: 20% 50%;
+}
+body[data-state="MADARA"] .bg > .layer4 {
+}
+
+@media screen and (max-width: 800px) {
+  /* body[data-state="MADARA"]   .bg>.layer3{
+        background-image: url("../media/madara-susano.png");
+        background-repeat: no-repeat;
+        background-position: 250px 100%;
+        opacity: 0.3;
+        background-size:800px ;
+    } */
+  body[data-state="MADARA"] .bg > .layer2 {
+    background-image: url("../media/madara1-min.webp");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 350px;
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 450px) {
+  .eye-container {
+    transform: scale(0.5) translateX(-30%);
+  }
+  body[data-state="MADARA"] .bg > .layer2 {
+    background-position: 150px 50%;
+  }
+}
